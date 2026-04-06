@@ -1,0 +1,235 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+   
+}
+body{
+    min-height: 100vh;
+    background-color: rosybrown;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+.card{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  background-color: aqua;
+  z-index: 1;
+  border-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  cursor: pointer;
+  box-shadow: 10px 0 20px royalblue, inset 300px 0 50px palevioletred;
+  transform: perspective(2000px) rotateZ(0);
+  transform-style: preserve-3d;
+  transition: all 1s ease;
+}
+.cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height:100%;
+    background-color: red;
+    border-radius: 10px;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: all 1s ease;
+   z-index: 3;
+}
+.cover img{
+    position: absolute;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    backface-visibility: hidden;
+    border-radius: 10px;
+}
+.cover img:nth-child(2){
+    transform: rotateY(180deg);
+
+}
+.card:hover {
+     transform: perspective(2000px) rotateZ(10deg);
+      box-shadow: 10px 0 20px royalblue, inset 30px 0 50px palevioletred;
+}
+.card:hover .cover{
+    transform: rotateY(-135deg);
+     box-shadow: 10px 0 10px royalblue;
+}
+
+.content, .content2, .content3{
+    width: 100%;
+    height: 100%;
+    padding: 1rem;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 15px;
+  
+     font-family: "Pirata One", system-ui;
+     transform-origin: left;
+    transform-style: preserve-3d;
+     backface-visibility: hidden;
+    transition: all 1s ease;
+      z-index: 2; 
+
+}.content h1{
+     font-family: "Lovers Quarrel", cursive;
+     margin-bottom: 1rem;
+}
+.book{
+    position: relative;
+    width: 300px;
+    height: 400px;
+}
+
+
+.card{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+}
+
+.card{
+    z-index: 2;
+}
+
+.content2, .content3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    display: flex;
+   
+    border-radius: 10px;
+
+    transform-origin: left;
+    transform: rotateY(180deg);
+    transition: 1s;
+    z-index: 1;
+      backface-visibility: hidden;
+}
+.content, .content3 {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+
+    transform-origin: left;
+    transition: 1s;
+    
+}
+.card.flip .content {
+    transform: rotateY(-180deg);
+}
+.card.flip .content3 {
+    transform: rotateY(0deg);
+}
+
+.card.flip .content2 {
+    transform: rotateY(0deg);
+}
+
+.page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: left;
+    transform: rotateY(180deg);
+    transition: 1s;
+    z-index: 3;
+    opacity: 0;
+    pointer-events: none;
+}
+.page2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    transform-origin: left;
+    transform: none;
+    transition: 1s;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.card.flip .page,
+.card.page2-active .page {
+    transform: rotateY(-180deg); 
+    opacity: 1;
+    pointer-events: none;
+}
+.page {
+    z-index: 2;
+}
+.page2 {
+    z-index: 1;
+}
+.card.page2-active .page2 {
+    opacity: 1;
+}
+.card.flip .cover {
+    
+    opacity: 0;
+}
+.page img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+.card.page2-active .content2 {
+    transform: rotateY(-180deg);
+}
+.page2 img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    backface-visibility: hidden;
+}
+.content2 p{
+    font-size: 20px;
+}
+.page2 h1 {
+    position: absolute;
+    top: 50%;
+    font-size: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+
+    color: rgb(0, 0, 0);
+    font-family: "Lovers Quarrel", cursive;
+ 
+
+    text-align: center;
+    z-index: 2;
+}
+.page2 h1 {
+    text-shadow: 2px 2px 10px rgba(255, 231, 231, 0.7);
+}
+
+
+
+
+
